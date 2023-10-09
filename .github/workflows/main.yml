@@ -1,0 +1,16 @@
+name: DOLL AUR CI
+on: [push]
+jobs:
+  build:
+    container:
+      image: archlinux
+      options: --privileged
+    steps:
+       - uses: actions/checkout@v2
+       - name: "Build repository."
+         run: cd src && bash.build.sh
+       - name: "Deploy repository."
+         uses: JamesIves/github-pages-deploy-action@v4.2.5
+         with:
+          branch: gh-pages
+          folder: output

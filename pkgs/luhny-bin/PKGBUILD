@@ -1,0 +1,16 @@
+pkgname=luhny-bin
+pkgver=0.3.0
+pkgrel=1
+pkgdesc="My Rustacean implementation of the Luhn algorithm for IMEI numbers."
+url="https://github.com/angeldollface/luhny.rs"
+license=("MIT")
+arch=("x86_64")
+provides=("luhny")
+conflicts=("luhny")
+source=("https://github.com/angeldollface/luhny.rs/releases/download/v.$pkgver/luhny-$pkgver-x86_64.tar.gz")
+sha256sums=("e3a000495bf82361ee52702fa96956c575afbd2e3d25e457df0e289b591835ca")
+
+package() {
+    install -Dm755 luhny -t "$pkgdir/usr/bin"
+    install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

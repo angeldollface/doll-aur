@@ -1,0 +1,6 @@
+/output/*
+pkg
+pkgs/*/src
+*.zip
+*.tar.gz
+.DS_Store

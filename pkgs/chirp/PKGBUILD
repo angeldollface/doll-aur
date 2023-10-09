@@ -1,0 +1,21 @@
+pkgname=chirp
+pkgver="0.1.0"
+pkgrel="1"
+pkgdesc="An implementation for a CLI tool in C that uses my algorithm to validate passwords."
+arch=('x86_64')
+provides=("chirp")
+conflicts=("chirp")
+license=('MIT')
+url="https://github.com/angeldollface/chirp"
+source=("https://github.com/angeldollface/$pkgname/archive/refs/tags/v.$pkgver.zip")
+md5sums=("505b9caab272f6562cfc6fc0e927555f")
+
+build() {
+	cd "$srcdir/$pkgname-v.$pkgver"
+	make
+}
+
+package() {
+	cd "$pkgname-v.$pkgver"
+	install -Dm755 chirp -t "$pkgdir/usr/bin"
+}
