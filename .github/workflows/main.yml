@@ -3,13 +3,9 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    container:
-      image: archlinux
     steps:
        - uses: actions/checkout@v2
-       - name: "Build repository."
-         run: cd src && bash build.sh
-       - name: "Deploy repository."
+       - name: "Deploy repository if present."
          uses: JamesIves/github-pages-deploy-action@v4.2.5
          with:
           branch: gh-pages

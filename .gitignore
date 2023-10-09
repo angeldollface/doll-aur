@@ -1,4 +1,3 @@
-/output/*
 pkg
 pkgs/*/src
 *.zip
