@@ -1,4 +1,3 @@
-
 # Making the folders.
 cd ..
 mkdir -p output
