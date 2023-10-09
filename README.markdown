@@ -2,7 +2,7 @@
 
 ![GitHub CI](https://github.com/angeldollface/doll-aur/actions/workflows/main.yml/badge.svg)
 
-***A doll's Arch Linux User Repository :woman_technologist: :ribbon:***
+***A doll's Arch Linux User Repository! :woman_technologist: :ribbon:***
 
 ## ABOUT :books:
 
