@@ -2,6 +2,7 @@ name: DOLL AUR CI
 on: [push]
 jobs:
   build:
+    runs-on: ubuntu-latest
     container:
       image: archlinux
       options: --privileged
