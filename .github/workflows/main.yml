@@ -10,7 +10,3 @@ jobs:
         with:
           branch: gh-pages
           folder: output
-      - name: "Cleaning up."
-        run: rm -rf output
-      - name: "Clean up the repository."
-        uses: stefanzweifel/git-auto-commit-action@v5
