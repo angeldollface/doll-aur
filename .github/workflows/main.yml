@@ -9,6 +9,8 @@ jobs:
         run: sudo apt-get update
       - name: "Install dependencies."
         run: sudo apt-get install -y pacman binutils make gcc pkg-config fakeroot
+      - name: "Install tools."
+        run: sudo pacman -S base-devel
       - name: "Test commands."
         run: makepkg && repo-add
       - name: "Deploy repository if present."
