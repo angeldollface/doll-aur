@@ -4,9 +4,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-       - uses: actions/checkout@v2
-       - name: "Deploy repository if present."
-         uses: JamesIves/github-pages-deploy-action@v4.2.5
-         with:
+      - uses: actions/checkout@v2
+      - name: "Execute package update."
+        run: sudo apt-get update
+      - name: "Install dependencies."
+        run: sudo apt-get install -y makepkg
+      - name: "Deploy repository if present."
+        uses: JamesIves/github-pages-deploy-action@v4.2.5
+        with:
           branch: gh-pages
           folder: output
