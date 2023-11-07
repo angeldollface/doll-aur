@@ -5,11 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: "Install dependencies."
-        run: sudo apt-get update && sudo apt-get install -y makepkg
-      - name: "Check commands."
-        run: makepkg
       - name: "Deploy repository if present."
+        if: ${{ hashFiles('output/') != '' }} 
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
           branch: gh-pages
