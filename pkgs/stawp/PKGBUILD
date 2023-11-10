@@ -1,0 +1,21 @@
+pkgname=stawp
+pkgver="0.1.0"
+pkgrel="1"
+pkgdesc="A supercharged time application with a silly name."
+arch=('x86_64')
+provides=("stawp")
+conflicts=("stawp")
+license=('MIT')
+url="https://github.com/angeldollface/stawp"
+source=("https://github.com/angeldollface/$pkgname/archive/refs/tags/v.$pkgver.zip")
+md5sums=("e305bde135d1a724a947654948844ee0")
+
+build() {
+	cd "$srcdir/$pkgname-v.$pkgver"
+	make
+}
+
+package() {
+	cd "$pkgname-v.$pkgver"
+	install -Dm755 stawp -t "$pkgdir/usr/bin"
+}

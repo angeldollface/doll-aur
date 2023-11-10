@@ -38,6 +38,7 @@ sudo pacman -S package_name
 - Luhny: [GitHub repository](https://github.com/angeldollface/luhny.rs)
 - Flek: [GitHub repository](https://github.com/angeldollface/flek)
 - Sysutil: [GitHub repository](https://github.com/angeldollface/sysutil)
+- Stawp: [GitHub repository](https://github.com/angeldollface/stawp)
 
 ## CONTRIBUTE :people_hugging:
 
