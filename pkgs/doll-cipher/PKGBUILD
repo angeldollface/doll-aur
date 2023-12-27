@@ -1,0 +1,30 @@
+pkgname="doll-cipher"
+pkgver="0.1.0"
+pkgrel="1"
+pkgdesc="A Rustacean implementation of an encryption algorithm of my own design."
+url="https://github.com/angeldollface/doll-cipher"
+license=("MIT")
+depends=("rustup")
+arch=("any")
+provides=($pkgname)
+conflicts=($pkgname)
+source=("https://github.com/angeldollface/$pkgname/archive/refs/tags/v.$pkgver.tar.gz")
+sha256sums=("9851b4f4fbfd32d4e364f4cc3ee435ff35e83954491e25a66b2cabbcbcdddf1a")
+
+prepare() {
+	cd $pkgname-v.$pkgver
+	export RUSTUP_TOOLCHAIN=stable
+	rustup default $RUSTUP_TOOLCHAIN
+}
+
+build() {
+	cd $pkgname-v.$pkgver
+	export RUSTUP_TOOLCHAIN=stable
+	export CARGO_TARGET_DIR=target
+	cargo build --bin dc --release
+}
+
+package() {
+	cd $pkgname-v.$pkgver
+	install -Dm755 target/release/dc -t "$pkgdir/usr/bin/"
+}

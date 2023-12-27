@@ -1,10 +1,11 @@
-pkgname=stawp
+pkgname="stawp"
 pkgver="0.1.0"
 pkgrel="1"
 pkgdesc="A supercharged time application with a silly name."
-arch=('x86_64')
-provides=("stawp")
-conflicts=("stawp")
+arch=("any")
+depends=("gcc", "make")
+provides=($pkgname)
+conflicts=($pkgname)
 license=('MIT')
 url="https://github.com/angeldollface/stawp"
 source=("https://github.com/angeldollface/$pkgname/archive/refs/tags/v.$pkgver.zip")

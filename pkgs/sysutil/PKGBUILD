@@ -1,10 +1,10 @@
-pkgname=sysutil
+pkgname="sysutil"
 pkgver="0.1.0"
 pkgrel="1"
 pkgdesc="Get system statistics easily!"
-arch=('any')
-provides=("sysutil")
-conflicts=("sysutil")
+arch=("any")
+provides=($pkgname)
+conflicts=($pkgname)
 depends=(
 	"python"
 	"python-psutil"

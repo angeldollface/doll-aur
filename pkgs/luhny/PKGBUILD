@@ -1,0 +1,30 @@
+pkgname="luhny"
+pkgver="0.3.0"
+pkgrel="1"
+pkgdesc="My Rustacean implementation of the Luhn algorithm for IMEI numbers."
+url="https://github.com/angeldollface/luhny.rs"
+license=("MIT")
+depends=("rustup")
+arch=("any")
+provides=($pkgname)
+conflicts=($pkgname)
+source=("https://github.com/angeldollface/$pkgname.rs/archive/refs/tags/v.$pkgver.tar.gz")
+sha256sums=("31a4dc3497a7082d1aba69db70ffbb151940e61f592a559a781d268a00dac0db")
+
+prepare() {
+	cd $pkgname.rs-v.$pkgver
+	export RUSTUP_TOOLCHAIN=stable
+	rustup default $RUSTUP_TOOLCHAIN
+}
+
+build() {
+	cd $pkgname.rs-v.$pkgver
+	export RUSTUP_TOOLCHAIN=stable
+	export CARGO_TARGET_DIR=target
+	cargo build --release
+}
+
+package() {
+	cd $pkgname.rs-v.$pkgver
+	install -Dm755 target/release/$pkgname -t "$pkgdir/usr/bin/"
+}

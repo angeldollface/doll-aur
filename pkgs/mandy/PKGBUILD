@@ -1,0 +1,30 @@
+pkgname="mandy"
+pkgver="0.3.3"
+pkgrel="1"
+pkgdesc="A hypersonic static-site generator written in Rust."
+url="https://github.com/angeldollface/mandy"
+license=("MIT")
+depends=("rustup")
+arch=("any")
+provides=($pkgname)
+conflicts=($pkgname)
+source=("https://github.com/angeldollface/$pkgname/archive/refs/tags/v.$pkgver.tar.gz")
+sha256sums=("24833c601b604dc235cbead0574f869e387361a0466e06fb2782d5faeed6a2ad")
+
+prepare() {
+	cd $pkgname-v.$pkgver
+	export RUSTUP_TOOLCHAIN=stable
+	rustup default $RUSTUP_TOOLCHAIN
+}
+
+build() {
+	cd $pkgname-v.$pkgver
+	export RUSTUP_TOOLCHAIN=stable
+	export CARGO_TARGET_DIR=target
+	cargo build --bin $pkgname --release
+}
+
+package() {
+	cd $pkgname-v.$pkgver
+	install -Dm755 target/release/$pkgname -t "$pkgdir/usr/bin/"
+}

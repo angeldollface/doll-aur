@@ -1,0 +1,29 @@
+pkgname="flek"
+pkgver="1.9.0"
+pkgrel="1"
+pkgdesc="A Rustacean implementation of my own algorithms to check for password security."
+url="https://github.com/angeldollface/flek"
+depends=("rustup")
+license=("MIT")
+arch=("any")
+provides=($pkgname)
+conflicts=($pkgname)
+source=("https://github.com/angeldollface/flek/archive/refs/tags/v.$pkgver.tar.gz")
+sha256sums=("95e4c5203f0b0c337e20997d2f9b74d32e7f56f26253bc04846bef4481b1c759")
+prepare() {
+	cd $pkgname-v.$pkgver
+	export RUSTUP_TOOLCHAIN=stable
+	rustup default $RUSTUP_TOOLCHAIN
+}
+
+build() {
+	cd $pkgname-v.$pkgver
+	export RUSTUP_TOOLCHAIN=stable
+	export CARGO_TARGET_DIR=target
+	cargo build --release
+}
+
+package() {
+	cd $pkgname-v.$pkgver
+	install -Dm755 target/release/$pkgname -t "$pkgdir/usr/bin/"
+}
