@@ -37,7 +37,6 @@ sudo pacman -S package_name
 - Chirp: [GitHub repository](https://github.com/angeldollface/chirp)
 - Luhny: [GitHub repository](https://github.com/angeldollface/luhny.rs)
 - Flek: [GitHub repository](https://github.com/angeldollface/flek)
-- Sysutil: [GitHub repository](https://github.com/angeldollface/sysutil)
 - Stawp: [GitHub repository](https://github.com/angeldollface/stawp)
 - Mandy: [GitHub repository](https://github.com/angeldollface/mandy)
 - Doll Cipher: [GitHub repository](https://github.com/angeldollface/doll-cipher)
