@@ -1,16 +1,16 @@
 # Making the folders.
 cd ..
 mkdir -p output
-mkdir -p output/x86_64
+mkdir -p output/any
 
 # Building the packages.
 for dir in $(ls -d ./pkgs/*); do
-    (cd $dir && makepkg && mv *.tar.zst ../../output/x86_64)
+    (cd $dir && makepkg && mv *.tar.zst ../../output/any)
 done
 
 # Generating the repository information.
 cd output
-cd x86_64
+cd any
 pwd
 repo-add doll-aur.db.tar.gz *.pkg.tar.zst
 
