@@ -1,5 +1,5 @@
 pkgname="mandy"
-pkgver="0.3.3"
+pkgver="0.3.4"
 pkgrel="1"
 pkgdesc="A hypersonic static-site generator written in Rust."
 url="https://github.com/angeldollface/mandy"
