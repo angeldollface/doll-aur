@@ -15,7 +15,7 @@ I shall assume that you are running some flavor of Arch Linux. Add the following
 ```CONF
 [doll-aur]
 SigLevel = Optional DatabaseOptional
-Server = https://angeldollface.art/$repo/any
+Server = https://angeldollface.boo/$repo/any
 ```
 
 Once you have added these lines, run the following command:
